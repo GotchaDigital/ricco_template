@@ -1,6 +1,9 @@
 	<?php focuson_ninzio_global_variables();?>
 		<!-- footer start -->
 		<footer class='footer'>
+
+			<?php include "mktz/templates/footer/top.php"; ?>
+
 			<div class="footer-widget-area nz-clearfix">
 				<div class="container">
 					<?php get_sidebar('footer'); ?>
