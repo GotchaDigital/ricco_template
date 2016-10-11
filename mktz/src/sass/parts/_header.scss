@@ -1,7 +1,65 @@
 .header
 {
+	.header-top
+	{
+		display: none;
+	}
 	.header-body
 	{
 		background-color: $c-red;
+
+		.logo-title
+		{
+			font-size: 0;
+			width: 194px;
+			height: 42px;
+			background-image: url("../img/logo.png");
+			margin-top: 22px;
+		}
+
+		.header-menu
+		{
+			a
+			{
+				color: $c-white;
+				font-family: $f-mont;
+				text-transform: uppercase;
+
+				&:hover::after
+				{
+					background-color: $c-orange;
+				}
+			}
+		}
+
+		.btn-loja
+		{
+			position: relative;
+			float: right;
+
+			a.btn
+			{
+				display: inline-block;
+				font-family: $f-mont;
+				text-transform: uppercase;
+				color: $c-white;
+				border: 1px solid $c-white;
+				padding: 5px 15px;
+				margin: 28px 0 0 25px;
+				cursor: pointer;
+
+				&:hover
+				{
+					border-color: $c-orange;
+				}
+			}
+		}
+	}
+}
+@media only screen and (min-width: 1100px)
+{
+	.version1.top-true
+	{
+		height: 82px;
 	}
 }

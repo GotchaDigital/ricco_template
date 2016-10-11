@@ -125,8 +125,13 @@
 				<?php endif ?>
 
 				<?php if ($nz_h1_desk_search == "true"): ?>
+					<!--
 					<div class="search-toggle"></div>
 					<div class="search"><?php get_search_form(); ?></div>
+					-->
+					<div class="btn-loja">
+						<a class="btn">Loja Virtual</a>
+					</div>
 				<?php endif ?>
 
 				<?php if ($nz_h1_desk_shop_cart == "true"): ?>
