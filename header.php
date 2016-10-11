@@ -17,6 +17,7 @@
 	<?php wp_head(); ?>
 	<?php include(get_template_directory().'/includes/dynamic-styles.php'); ?>
 	<?php include(get_template_directory().'/includes/header/header-opt.php'); ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/mktz/css/index.css'; ?>">
 </head>
 <body <?php body_class(); ?>>
 <!-- general wrap start -->

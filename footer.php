@@ -40,6 +40,14 @@
 </div>
 <a id="top" href="#wrap"></a>
 <!-- general wrap end -->
+
+<script>
+	document.write(
+		'<script src="http://' +
+		(location.host || 'localhost').split(':')[0] +
+		':35729/livereload.js?snipver=1"></' +
+		'script>')
+</script>
 <?php include(get_template_directory()."/includes/dynamic-scripts.php"); ?>
 <?php wp_footer(); ?>
 </body>
