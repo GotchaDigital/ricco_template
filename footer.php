@@ -2,7 +2,7 @@
 		<!-- footer start -->
 		<footer class='footer'>
 
-			<?php include "mktz/templates/footer/top.php"; ?>
+			<?php //include "mktz/templates/footer/top.php"; ?>
 
 			<div class="footer-widget-area nz-clearfix">
 				<div class="container">
@@ -51,6 +51,7 @@
 		':35729/livereload.js?snipver=1"></' +
 		'script>')
 </script>
+
 <?php include(get_template_directory()."/includes/dynamic-scripts.php"); ?>
 <?php wp_footer(); ?>
 </body>

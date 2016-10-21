@@ -1,1 +1,23 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+
+.nz-recent-projects .projects .ninzio-overlay
+{
+	background: $c-orangeAlpha;
+}
+a.box-more
+{
+	color: $c-orange !important;
+
+	&:hover
+	{
+		color: $c-darkOrange !important;
+	}
+}
+.post-date-custom
+{
+	background-color: $c-orange !important;
+}
+.widget_title::before, input[type="submit"]
+{
+	background-color: $c-orange !important;
+}
