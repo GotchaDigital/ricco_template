@@ -21,3 +21,110 @@ a.box-more
 {
 	background-color: $c-orange !important;
 }
+.woocommerce .single-product-summary [itemprop='description'] > :last-child,
+.woocommerce-tabs.wc-tabs-wrapper,
+.single_variation_wrap,
+.product_meta
+{
+	display: none !important;
+}
+.mktz_tab-wrapper *
+{
+	margin: 0 !important;
+	padding: 0 !important;
+
+}
+.mktz_tab-wrapper .container
+{
+	margin: 0 auto !important;
+}
+.mktz-custom-tab
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li
+	{
+		float: left;
+		width: 20%;
+		text-align: center;
+		position: relative;
+
+		a
+		{
+			width: 100%;
+			height: 50px;
+			display: block;
+			line-height: 50px;
+			cursor: pointer;
+			color: $c-gray !important;
+
+			&.active, &:hover
+			{
+				color: $c-white !important;
+				background-color: $c-orange;
+			}
+		}
+	}
+}
+.nz-recent-projects.small-image img
+{
+	height: auto;
+	width: 100%;
+}
+.nz-thumbnail .tags
+{
+	font-size: 0.7em;
+}
+.ninzio-overlay
+{
+	cursor: pointer;
+}
+.mktz-title
+{
+	font-size: 1.6em;
+}
+.mktz-pro-files-wrapper
+{
+	margin-bottom: 30px;
+	position: relative;
+}
+.mkt-pro-files
+{
+	background-color: $c-white;
+	display: inline-block;
+	border: solid 2px #acacac;
+	color: #acacac;
+	padding: 2px 0;
+	width: 29%;
+	margin-right: 2%;
+	text-align: center;
+}
+.mktz-pro-actions
+{
+	background-color: $c-orange;
+	color: $c-white;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 10px 0;
+	margin-right: 2%;
+	font-weight: bold;
+	width: 48%;
+	text-align: center;
+
+	&:last-child
+	{
+		margin-right: 0;
+	}
+}
+.swatch-wrapper
+{
+	padding: 0;
+	border: 0;
+}
+.variations_form,
+table.variations
+{
+	border: 0 !important;
+}

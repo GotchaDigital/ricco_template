@@ -1043,7 +1043,7 @@
 
 		$('.woocommerce .images img').each(function(){
 			var $this = $(this);
-			$this.wrap('<div class="nz-thumbnail"></div>')
+			$this.wrap('<div class="nz-thumbnail"></div>');
 			$this.parent().prepend('<div class="ninzio-overlay"><span class="nz-overlay-before"></span></div>');
 		});
 

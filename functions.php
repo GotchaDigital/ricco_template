@@ -565,7 +565,7 @@
                 global $post;
             ?>
                 <?php if ($post->post_excerpt): ?>
-                    <div class="description"><?php echo $post->post_excerpt; ?></div>
+                    <div class="description"><?php echo $post->post_content; ?></div>
                 <?php endif ?>
                 <?php if (is_single()): ?>
                     <div class="post-social-share nz-clearfix">
@@ -592,6 +592,7 @@
             }
             
             add_action( 'wp_enqueue_scripts', 'focuson_ninzio_remove_pretty_photo', 99 );
+            /*
 
             if (isset($GLOBALS['focuson_ninzio']['shop-rp']) && $GLOBALS['focuson_ninzio']['shop-rp'] == 0) {
                 // remove related products
@@ -603,7 +604,7 @@
                 return array();
             }
             add_filter('woocommerce_related_products_args','focuson_ninzio_remove_related_products', 10);
-            
+            */
             add_theme_support( 'woocommerce' );
 
             add_filter( 'woocommerce_enqueue_styles', '__return_false' );
@@ -681,5 +682,149 @@
         return;
     }
     add_action('admin_enqueue_scripts','focuson_admin_scripts_styles');
+
+
+/* Angreh */
+function woo_add_custom_general_fields() {
+
+    global $woocommerce, $post;
+
+    echo '<div class="options_group">';
+
+    woocommerce_wp_text_input(
+        array(
+            'id'          => '_mktz_pro_storelink',
+            'label'       => __( 'Link Loja-Online', 'woocommerce' ),
+            'placeholder' => 'http://',
+            'desc_tip'    => 'true',
+            'description' => __( 'Insira o link do produto na Loja Online.', 'woocommerce' )
+        )
+    );
+
+    echo '</div>';
+
+    echo '<div class="options_group">';
+
+    // Text Field
+    woocommerce_wp_text_input(
+        array(
+            'id'          => '_mktz_pro_3dmodel',
+            'label'       => __( '3D Model Link', 'woocommerce' ),
+            'placeholder' => 'http://',
+            'desc_tip'    => 'true',
+            'description' => __( 'Insira o link para o modelo 3D.', 'woocommerce' )
+        )
+    );
+
+    woocommerce_wp_text_input(
+        array(
+            'id'          => '_mktz_pro_2dcad',
+            'label'       => __( '2D Cad Link', 'woocommerce' ),
+            'placeholder' => 'http://',
+            'desc_tip'    => 'true',
+            'description' => __( 'Insira o link para o arquivo 2D Cad.', 'woocommerce' )
+        )
+    );
+
+    woocommerce_wp_text_input(
+        array(
+            'id'          => '_mktz_pro_catalogue',
+            'label'       => __( 'Catalogue Link', 'woocommerce' ),
+            'placeholder' => 'http://',
+            'desc_tip'    => 'true',
+            'description' => __( 'Insira o link para o catalogue.', 'woocommerce' )
+        )
+    );
+
+    echo '</div>';
+
+}
+
+function woo_add_custom_general_fields_save( $post_id )
+{
+
+    // Text Field
+    $woocommerce_mktz_pro_3dmodel = $_POST['_mktz_pro_3dmodel'];
+    update_post_meta($post_id, '_mktz_pro_3dmodel', esc_attr($woocommerce_mktz_pro_3dmodel));
+
+    $woocommerce_mktz_pro_2dcad = $_POST['_mktz_pro_2dcad'];
+    update_post_meta($post_id, '_mktz_pro_2dcad', esc_attr($woocommerce_mktz_pro_2dcad));
+
+    $woocommerce_mktz_pro_storelink = $_POST['_mktz_pro_storelink'];
+    update_post_meta($post_id, '_mktz_pro_storelink', esc_attr($woocommerce_mktz_pro_storelink));
+
+    $woocommerce_mktz_pro_catalogue = $_POST['_mktz_pro_catalogue'];
+    update_post_meta($post_id, '_mktz_pro_catalogue', esc_attr($woocommerce_mktz_pro_catalogue));
+}
+
+// Display Fields
+add_action( 'woocommerce_product_options_general_product_data', 'woo_add_custom_general_fields' );
+
+// Save Fields
+add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_save' );
+
+// [bartag foo="foo-value"]
+function mktz_prod_func( $atts ) {
+    $attrs = shortcode_atts( array(
+        'category' => 'something'
+    ), $atts );
+
+    $return = '';
+
+    $loop2 = new WP_Query( array(
+        'post_type' => array(
+                'product',
+                'product_variation'
+        ),
+        'posts_per_page' => 3,
+        'product_cat'=> $attrs['category'] ) );
+
+
+    while ( $loop2->have_posts() ) {
+        $loop2->the_post();
+
+        $pro = new WC_Product($loop2->post->ID);
+
+        //Pegando Imagem
+        $imgPro = $pro->get_image( $size = 'medium_large' );
+        $proImage = '<div class="mktz-pro-img">' . $imgPro . '</div>';
+
+        //Pegando Título
+        $proTitle = '<div class="mktz-pro-title">' . get_the_title( $loop2->post->ID ) . '</div>';
+
+        //Pegando Tags
+        $tags = array();
+        $tagsAux = get_the_terms( $loop2->post->ID, 'product_tag' );
+        foreach( $tagsAux as $tag )
+        {
+            $tags[] = $tag->name;
+        }
+        $tagsStr = implode(',', $tags);
+        $proTags = '<div class="mktz-pro-tags">' . $tagsStr . '</div>';
+
+        $nzSnippet = '<div class="projects"><div class="nz-thumbnail">' .
+                     '<!--img width="640" height="520"
+                           src="http://local.ricco.com/wp-content/uploads/2016/03/portfolio1-1-640x520.jpg"
+                           class="attachment-Focuson-Ninzio-Half size-Focuson-Ninzio-Half wp-post-image"
+                           alt="portfolio1"/-->' .
+                     $proImage .
+                     '<div class="ninzio-overlay" onclick="window.location.href=\''.$pro->get_permalink().'\'">
+                        <a class="nz-overlay-before"
+                           data-lightbox-gallery="gallery3"
+                           href="'.$pro->get_permalink().'"></a>
+                        <h4 class="project-title"><a
+                            href="'.$pro->get_permalink().'">'.
+                            $proTitle
+                            .'</a><span class="tags">'.$proTags.'</span></h4></div>
+                        </div></div>';
+
+       $return .= '<!--li><a href="'. $pro->get_permalink() .'">' . $proImage . $proTitle . $proTags . '</a></li-->' . $nzSnippet;
+    }
+
+    wp_reset_postdata();
+
+    return '<div class="nz-recent-projects small-image">' . $return . '</div>';
+}
+add_shortcode( 'mktz_prod', 'mktz_prod_func' );
 
 ?>
