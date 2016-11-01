@@ -56,6 +56,11 @@
 		}
 	}
 }
+.version1.effect-underline .desk-menu > ul > li > a::after
+{
+	color: $c-orange;
+	background-color: $c-orange;
+}
 @media only screen and (min-width: 1100px)
 {
 	.version1.top-true

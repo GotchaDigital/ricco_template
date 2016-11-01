@@ -763,7 +763,7 @@ add_action( 'woocommerce_product_options_general_product_data', 'woo_add_custom_
 // Save Fields
 add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_save' );
 
-// [bartag foo="foo-value"]
+// [mktz_prod foo="foo-value"]
 function mktz_prod_func( $atts ) {
     $attrs = shortcode_atts( array(
         'category' => 'something'
@@ -826,5 +826,50 @@ function mktz_prod_func( $atts ) {
     return '<div class="nz-recent-projects small-image">' . $return . '</div>';
 }
 add_shortcode( 'mktz_prod', 'mktz_prod_func' );
+
+
+// [mktz_pages cat="cases"]
+function mktz_pages_func( $atts ) {
+    $attrs = shortcode_atts( array(
+        'category' => '',
+        'posts' => 4
+    ), $atts );
+
+    $return = '';
+
+    $args3 = array( 'numberposts' => $attrs['posts'], 'category_name' => $attrs['category'] );
+    $loop3 = new WP_Query( $args3 );
+
+    while ( $loop3->have_posts() ) {
+        $loop3->the_post();
+
+        //Pegando Imagem
+        $thumb_id = get_post_thumbnail_id( $loop3->post->ID );
+        $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+        $thumb_url = $thumb_url_array[0];
+        $imgPro = $thumb_url;
+        $proImage = '<div class="mktz-pro-img"><img src="' . $imgPro . '"></div>';
+
+        //Pegando Título
+        $proTitle = '<div class="mktz-pro-title">' . $loop3->post->post_title . '</div>';
+
+        $nzSnippet = '<div class="projects"><div class="nz-thumbnail">' .
+            $proImage .
+            '<div class="ninzio-overlay" onclick="window.location.href=\''. get_permalink( $loop3->post->ID ) .'\'">
+                        <a class="nz-overlay-before"
+                           data-lightbox-gallery="gallery3"
+                           href="' . get_permalink( $loop3->post->ID ) . '"></a>
+                        <h4 class="project-title"><a
+                            href="'. get_permalink( $loop3->post->ID ) .'">'.
+            $proTitle
+            .'</a></h4></div>
+                        </div></div>';
+
+        $return .= $nzSnippet;
+    }
+
+    return '<div class="nz-recent-projects small-image">' . $return . '</div>';
+}
+add_shortcode( 'mktz_pages', 'mktz_pages_func' );
 
 ?>
