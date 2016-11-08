@@ -766,7 +766,8 @@ add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_s
 // [mktz_prod foo="foo-value"]
 function mktz_prod_func( $atts ) {
     $attrs = shortcode_atts( array(
-        'category' => 'something'
+        'category' => 'something',
+        'qty' => 3
     ), $atts );
 
     $return = '';
@@ -776,7 +777,7 @@ function mktz_prod_func( $atts ) {
                 'product',
                 'product_variation'
         ),
-        'posts_per_page' => 3,
+        'posts_per_page' => $attrs['qty'],
         'product_cat'=> $attrs['category'] ) );
 
 
