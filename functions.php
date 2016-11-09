@@ -835,12 +835,19 @@ function mktz_pages_func( $atts ) {
     $attrs = shortcode_atts( array(
         'category' => '',
         'posts' => 4,
-        'size' => 'medium'
+        'size' => 'medium',
+        'exclude_self' => false
     ), $atts );
 
     $return = '';
 
     $args3 = array( 'numberposts' => $attrs['posts'], 'category_name' => $attrs['category'] );
+
+    if( $attrs['exclude_self'] == true )
+    {
+        $args3['post__not_in'] = array(get_the_ID());
+    }
+
     $loop3 = new WP_Query( $args3 );
 
     while ( $loop3->have_posts() ) {
