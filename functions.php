@@ -685,6 +685,7 @@
 
 
 /* Angreh */
+/*
 function woo_add_custom_general_fields() {
 
     global $woocommerce, $post;
@@ -762,7 +763,7 @@ add_action( 'woocommerce_product_options_general_product_data', 'woo_add_custom_
 
 // Save Fields
 add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_save' );
-
+*/
 // [mktz_prod foo="foo-value"]
 function mktz_prod_func( $atts ) {
     $attrs = shortcode_atts( array(
@@ -869,7 +870,7 @@ function mktz_pages_func( $atts ) {
         $return .= $nzSnippet;
     }
 
-    return '<div class="nz-recent-projects small-image">' . $return . '</div>';
+    return '<div class="nz-recent-projects medium-image">' . $return . '</div>';
 }
 add_shortcode( 'mktz_pages', 'mktz_pages_func' );
 
