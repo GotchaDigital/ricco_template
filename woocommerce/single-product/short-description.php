@@ -34,7 +34,7 @@ if ( ! $post->post_excerpt ) {
 <?php
 //Acabamentos disponíveis
 $images = get_field('cores_disponiveis');
-
+echo '..';
 if( $images ): ?>
     <div class="cores_disponiveis">
         <div class="title">Cores Dispon&iacute;veis</div>
