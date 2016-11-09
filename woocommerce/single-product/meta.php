@@ -70,7 +70,7 @@ $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 
 <?php if( $f_empty ) echo 'N&atilde;o existem arquivos para esse produto.'; ?>
 </div>
-
+<hr>
 <div class="mktz-pro-btn-wrapper">
     <a class="mktz-pro-actions" href="/solicitar-orcamento/#prod-<?php echo $post->ID; ?>">Solicitar Or&ccedil;amento</a>
 </div>

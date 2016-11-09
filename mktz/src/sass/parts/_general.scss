@@ -108,15 +108,10 @@ a.box-more
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 10px 0;
-	margin-right: 2%;
 	font-weight: bold;
-	width: 48%;
+	width: 100%;
+	margin-top: 40px;
 	text-align: center;
-
-	&:last-child
-	{
-		margin-right: 0;
-	}
 }
 .swatch-wrapper
 {
@@ -127,4 +122,57 @@ a.box-more
 table.variations
 {
 	border: 0 !important;
+}
+.cores_disponiveis
+{
+    ul
+    {
+        list-style: none;
+
+        &:after
+        {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+        li
+        {
+            float: left;
+
+            img
+            {
+                width: 50px !important;
+                height: 50px !important;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.acabamentos_disponiveis
+{
+    ul
+    {
+        list-style: none;
+
+        &:after
+        {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+        li
+        {
+            float: left;
+
+            img
+            {
+                width: 80px !important;
+                height: 80px !important;
+                margin-right: 10px;
+            }
+        }
+    }
 }

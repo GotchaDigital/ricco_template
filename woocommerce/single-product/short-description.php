@@ -25,9 +25,44 @@ global $post;
 if ( ! $post->post_excerpt ) {
 	return;
 }
-
+//angreh
 ?>
 <div itemprop="description" class="short-description">
 	<?php echo apply_filters( 'woocommerce_short_description', $post->post_content ) ?>
 </div>
 
+<?php
+//Acabamentos disponíveis
+$images = get_field('cores_disponiveis');
+
+if( $images ): ?>
+    <div class="cores_disponiveis">
+        <div class="title">Cores Dispon&iacute;veis</div>
+        <ul>
+            <?php foreach( $images as $image ): ?>
+                <li>
+                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+<?php endif; ?>
+
+<?php
+//Acabamentos disponíveis
+$images = get_field('acabamentos_disponiveis');
+
+if( $images ): ?>
+    <div class="acabamentos_disponiveis">
+        <div class="title">Acabamentos Dispon&iacute;veis</div>
+        <ul>
+            <?php foreach( $images as $image ): ?>
+                <li>
+                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+<?php endif; ?>
