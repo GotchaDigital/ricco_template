@@ -51,6 +51,7 @@
 		':35729/livereload.js?snipver=1"></' +
 		'script>')
 </script>
+    <script src="<?php echo get_template_directory_uri(); ?>/mktz/js/index.js"></script>
 
 <?php include(get_template_directory()."/includes/dynamic-scripts.php"); ?>
 <?php wp_footer(); ?>
