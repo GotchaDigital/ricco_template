@@ -834,7 +834,8 @@ add_shortcode( 'mktz_prod', 'mktz_prod_func' );
 function mktz_pages_func( $atts ) {
     $attrs = shortcode_atts( array(
         'category' => '',
-        'posts' => 4
+        'posts' => 4,
+        'size' => 'medium'
     ), $atts );
 
     $return = '';
@@ -870,7 +871,7 @@ function mktz_pages_func( $atts ) {
         $return .= $nzSnippet;
     }
 
-    return '<div class="nz-recent-projects medium-image">' . $return . '</div>';
+    return '<div class="nz-recent-projects '. $attrs['size'] .'-image">' . $return . '</div>';
 }
 add_shortcode( 'mktz_pages', 'mktz_pages_func' );
 
