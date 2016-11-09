@@ -56,22 +56,21 @@ $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 
 
 <div class="mktz-pro-files-wrapper">
-<?php $modelLink = get_post_meta( $post->ID, '_mktz_pro_3dmodel', true ); if( !empty($modelLink) ): ?>
-    <a class="mkt-pro-files" href="#" target="_blank">3D Model</a>
+<?php $modelLink = get_post_meta( $post->ID, '3d_model', true ); if( !empty($modelLink) ): $fileUrl = get_field('3d_model'); ?>
+    <a class="mkt-pro-files" href="<?php echo $fileUrl['url']; ?>" target="_blank">3D Model</a>
 <?php $f_empty = false; endif; ?>
 
-<?php $modelLink = get_post_meta( $post->ID, '_mktz_pro_2dcad', true ); if( !empty($modelLink) ): ?>
-    <a class="mkt-pro-files" href="#" target="_blank">2D Cad</a>
+<?php $modelLink = get_post_meta( $post->ID, '2d_cad', true ); if( !empty($modelLink) ): $fileUrl = get_field('2d_cad'); ?>
+    <a class="mkt-pro-files" href="<?php echo $fileUrl['url']; ?>" target="_blank">2D Cad</a>
 <?php $f_empty = false; endif; ?>
 
-<?php $modelLink = get_post_meta( $post->ID, '_mktz_pro_catalogue', true ); if( !empty($modelLink) ): ?>
-    <a class="mkt-pro-files" href="#" target="_blank">Catalogue</a>
+<?php $modelLink = get_post_meta( $post->ID, 'catalogo', true ); if( !empty($modelLink) ): $fileUrl = get_field('catalogo'); ?>
+    <a class="mkt-pro-files" href="<?php echo $fileUrl['url']; ?>" target="_blank">Cat&aacute;logo</a>
 <?php $f_empty = false; endif; ?>
 
 <?php if( $f_empty ) echo 'N&atilde;o existem arquivos para esse produto.'; ?>
 </div>
 
 <div class="mktz-pro-btn-wrapper">
-    <a class="mktz-pro-actions" href="<?php echo get_post_meta( $post->ID, '_mktz_pro_storelink', true ); ?>">Ir para loja online</a>
-    <a class="mktz-pro-actions" href="#">Solicitar Or&ccedil;amento</a>
+    <a class="mktz-pro-actions" href="/solicitar-orcamento/#prod-<?php echo $post->ID; ?>">Solicitar Or&ccedil;amento</a>
 </div>
