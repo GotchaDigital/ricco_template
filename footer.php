@@ -44,13 +44,13 @@
 <a id="top" href="#wrap"></a>
 <!-- general wrap end -->
 
-<script>
+<!--script>
 	document.write(
 		'<script src="http://' +
 		(location.host || 'localhost').split(':')[0] +
 		':35729/livereload.js?snipver=1"></' +
 		'script>')
-</script>
+</script-->
     <script src="<?php echo get_template_directory_uri(); ?>/mktz/js/index.js"></script>
 
 <?php include(get_template_directory()."/includes/dynamic-scripts.php"); ?>
