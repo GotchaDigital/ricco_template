@@ -92,6 +92,9 @@ a.box-more {
 table.variations {
   border: 0 !important; }
 
+* {
+  outline: none; }
+
 .cores_disponiveis ul {
   list-style: none; }
   .cores_disponiveis ul:after {
@@ -157,6 +160,18 @@ table.variations {
   margin-top: 70px; }
   .related.products h2, .related.products hr {
     margin-bottom: 20px; }
+
+#cboxOverlay {
+  background-color: #ffffff;
+  opacity: 0.7 !important;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99; }
+
+#colorbox {
+  z-index: 100; }
 
 .header .header-top {
   display: none; }

@@ -1,3 +1,4 @@
+* { outline: none; }
 .cores_disponiveis
 {
     ul
@@ -116,4 +117,18 @@
     {
         margin-bottom: 20px;
     }
+}
+#cboxOverlay
+{
+    background-color: #ffffff;
+    opacity: 0.7 !important;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+}
+#colorbox
+{
+    z-index: 100;
 }

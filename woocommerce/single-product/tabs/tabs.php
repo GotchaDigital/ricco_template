@@ -31,7 +31,7 @@ $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 ?>
 
 <?php
-//Acabamentos disponíveis
+//Imagens de projetos relacionados
 $images = get_field('project_images');
 if( $images ): ?>
     <div class="projetos_relacionados_title">
@@ -43,7 +43,9 @@ if( $images ): ?>
 	        <ul>
 	            <?php foreach( $images as $image ): ?>
 	                <li>
-	                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+	                	<a href="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" class="lb">
+		                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+	                	</a>
 	                </li>
 	            <?php endforeach; ?>
 	        </ul>
