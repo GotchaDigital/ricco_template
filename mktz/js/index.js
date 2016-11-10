@@ -32,4 +32,6 @@ $(function(){
         maxWidth: '98%'
         //speed: 0
     });
+
+    console.log('colorbox');
 });
