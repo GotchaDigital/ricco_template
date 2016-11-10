@@ -26,25 +26,6 @@ if ( empty( $product ) || ! $product->exists() ) {
 	return;
 }
 
-/* Angreh : Imagens relacionadas */
-/* Begin */
-$auxRP = array();
-for($i=0;$i<5;$i++)
-{
-    $fieldName = 'rp_pro0' . $i;
-    $field = get_post_meta($product->id, $fieldName, true);
-    if( !empty($field) )
-    {
-        $file = get_field($fieldName);
-        $auxRP[] = $file['url'];
-    }
-}
-if( !empty($auxRP) )
-{
-    exit(var_dump($product->id,$auxRP));
-}
-/* End */
-
 if ( ! $related = $product->get_related( $posts_per_page ) ) {
 	return;
 }
@@ -68,7 +49,7 @@ if ( $products->have_posts() ) : ?>
 	<div class="related products">
 
 		<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
-
+        <hr>
 		<?php woocommerce_product_loop_start(); ?>
 
             <div class="nz-recent-projects small-image">

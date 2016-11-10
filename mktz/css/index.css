@@ -118,6 +118,46 @@ table.variations {
       height: 80px !important;
       margin-right: 10px; }
 
+.project_images ul {
+  list-style: none;
+  position: relative; }
+  .project_images ul:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .project_images ul li {
+    float: left;
+    width: 20%;
+    margin: 0 2.5%;
+    position: relative; }
+    .project_images ul li img {
+      width: 100% !important;
+      height: auto !important; }
+
+.projetos_relacionados_title {
+  margin: 70px 0 0 0; }
+  .projetos_relacionados_title h2, .projetos_relacionados_title hr {
+    margin-bottom: 20px; }
+
+.projetos_relacionados {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #f4f4f4;
+  padding: 30px 0; }
+  .projetos_relacionados .project_images {
+    position: relative;
+    width: 1170px;
+    margin: 0 auto; }
+
+.related.products {
+  margin: 70px 0 0 0; }
+  .related.products h2, .related.products hr {
+    margin-bottom: 20px; }
+
 .header .header-top {
   display: none; }
 

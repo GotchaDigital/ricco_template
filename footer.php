@@ -23,10 +23,10 @@
 					<?php endif ?>
 					<?php if(has_nav_menu("footer-menu")): ?>
 						<nav class="footer-menu nz-clearfix">
-							<?php wp_nav_menu(array( 
-								'theme_location' => 'footer-menu', 
-								'depth'          => 1, 
-								'container'      => false, 
+							<?php wp_nav_menu(array(
+								'theme_location' => 'footer-menu',
+								'depth'          => 1,
+								'container'      => false,
 								'menu_id'        => 'footer-menu',
 								'link_before'    => '',
 								'link_after'     => ''
@@ -44,13 +44,13 @@
 <a id="top" href="#wrap"></a>
 <!-- general wrap end -->
 
-<!--script>
-	document.write(
-		'<script src="http://' +
-		(location.host || 'localhost').split(':')[0] +
-		':35729/livereload.js?snipver=1"></' +
-		'script>')
-</script-->
+	<!--script>
+		document.write(
+			'<script src="http://' +
+			(location.host || 'localhost').split(':')[0] +
+			':35729/livereload.js?snipver=1"></' +
+			'script>')
+	</script-->
     <script src="<?php echo get_template_directory_uri(); ?>/mktz/js/index.js"></script>
 
 <?php include(get_template_directory()."/includes/dynamic-scripts.php"); ?>

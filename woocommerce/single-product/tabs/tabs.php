@@ -28,6 +28,31 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
+?>
+
+<?php
+//Acabamentos disponíveis
+$images = get_field('project_images');
+if( $images ): ?>
+    <div class="projetos_relacionados_title">
+    	<h2>Projeto</h2>
+	    <hr>
+	</div>
+	<div class="projetos_relacionados">
+	    <div class="project_images">
+	        <ul>
+	            <?php foreach( $images as $image ): ?>
+	                <li>
+	                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+	                </li>
+	            <?php endforeach; ?>
+	        </ul>
+	    </div>
+	</div>
+<?php endif; ?>
+
+<?php
+
 if ( ! empty( $tabs ) ) : ?>
 
 	<div class="woocommerce-tabs wc-tabs-wrapper">

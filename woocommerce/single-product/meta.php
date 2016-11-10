@@ -57,15 +57,15 @@ $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 
 <div class="mktz-pro-files-wrapper">
 <?php $modelLink = get_post_meta( $post->ID, '3d_model', true ); if( !empty($modelLink) ): $fileUrl = get_field('3d_model'); ?>
-    <a class="mkt-pro-files" href="<?php echo $fileUrl['url']; ?>" target="_blank">3D Model</a>
+    <a class="mkt-pro-files" href="<?php echo $fileUrl['url']; ?>" target="_blank" download>3D Model</a>
 <?php $f_empty = false; endif; ?>
 
 <?php $modelLink = get_post_meta( $post->ID, '2d_cad', true ); if( !empty($modelLink) ): $fileUrl = get_field('2d_cad'); ?>
-    <a class="mkt-pro-files" href="<?php echo $fileUrl['url']; ?>" target="_blank">2D Cad</a>
+    <a class="mkt-pro-files" href="<?php echo $fileUrl['url']; ?>" target="_blank" download>2D Cad</a>
 <?php $f_empty = false; endif; ?>
 
 <?php $modelLink = get_post_meta( $post->ID, 'catalogo', true ); if( !empty($modelLink) ): $fileUrl = get_field('catalogo'); ?>
-    <a class="mkt-pro-files" href="<?php echo $fileUrl['url']; ?>" target="_blank">Cat&aacute;logo</a>
+    <a class="mkt-pro-files" href="<?php echo $fileUrl['url']; ?>" target="_blank" download>Cat&aacute;logo</a>
 <?php $f_empty = false; endif; ?>
 
 <?php if( $f_empty ) echo 'N&atilde;o existem arquivos para esse produto.'; ?>
