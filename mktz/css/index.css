@@ -154,7 +154,7 @@ table.variations {
     margin: 0 auto; }
 
 .related.products {
-  margin: 70px 0 0 0; }
+  margin-top: 70px; }
   .related.products h2, .related.products hr {
     margin-bottom: 20px; }
 
