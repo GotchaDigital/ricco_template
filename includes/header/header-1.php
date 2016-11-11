@@ -8,7 +8,7 @@
 					</a>
 				</div>
 			<?php else: ?>
-				<div class="logo-title"><?php echo get_bloginfo('name') ?></div>
+				<a href="/" class="logo-title"><?php echo get_bloginfo('name') ?></a>
 			<?php endif ?>
 			<?php if ($nz_h1_desk_shop_cart == "true"): ?>
 			    <?php if (class_exists('Woocommerce')): ?>
@@ -113,7 +113,7 @@
 						</a>
 					</div>
 				<?php else: ?>
-					<div class="logo-title"><?php echo get_bloginfo('name') ?></div>
+					<a href="/" class="logo-title"><?php echo get_bloginfo('name') ?></a>
 				<?php endif ?>
 
 				<?php if (!empty($nz_h1_desk_fixed_logo)): ?>
