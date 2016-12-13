@@ -1,4 +1,10 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+.rich-header {
+  height: 55px; }
+
+#nz-content {
+  padding: 0 !important; }
+
 .nz-recent-projects .projects .ninzio-overlay {
   background: rgba(253, 108, 0, 0.7); }
 
@@ -91,6 +97,40 @@ a.box-more {
 .variations_form,
 table.variations {
   border: 0 !important; }
+
+.tabrow {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important; }
+  .tabrow::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .tabrow.five ul.menu > li {
+    width: 100%; }
+    @media (min-width: 790px) {
+      .tabrow.five ul.menu > li {
+        width: 20%; } }
+  .tabrow.four ul.menu > li {
+    width: 100%; }
+    @media (min-width: 790px) {
+      .tabrow.four ul.menu > li {
+        width: 25%; } }
+  .tabrow ul.menu > li {
+    background-color: transparent;
+    text-align: center;
+    float: left;
+    border: none !important; }
+    .tabrow ul.menu > li a {
+      padding: 10px 0 !important; }
+    .tabrow ul.menu > li:hover {
+      background-color: #fd6c00; }
+      .tabrow ul.menu > li:hover a {
+        color: #ffffff !important; }
+    .tabrow ul.menu > li.current-menu-item {
+      background-color: #fd6c00; }
+      .tabrow ul.menu > li.current-menu-item a {
+        color: #ffffff !important; }
 
 * {
   outline: none; }
