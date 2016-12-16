@@ -33,9 +33,9 @@
 				$output .= '<div class="mailchimp-subtitle">'.$subtitle.'</div>';
 				$output .='<form action="'.$action.'" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>';
 					$output .='<span class="icon-mail6 icon"></span>';
-					$output .='<input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL" data-placeholder="Your Email" required>';
+					$output .='<input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL" data-placeholder="Seu Email" required>';
 				    $output .='<input type="text" name="'.$name.'" tabindex="-1" value="" class="hidden">';
-				    $output .='<input type="submit" value="'.esc_html__('Subscribe now!', 'focuson').'" name="subscribe" id="mc-embedded-subscribe">';
+				    $output .='<input type="submit" value="'.esc_html__('Inscreva-se!', 'focuson').'" name="subscribe" id="mc-embedded-subscribe">';
 				$output .='</form>';
 				$output .= '<div class="mailchimp-description">'.$description.'</div>';
 			$output .='</div>';

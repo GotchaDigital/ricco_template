@@ -62,6 +62,12 @@ a.box-more {
 .ninzio-overlay {
   cursor: pointer; }
 
+.nz-content-box .box-icon-wrap {
+  left: 25px !important; }
+
+.footer .social-links {
+  margin-right: 55px !important; }
+
 .mktz-title {
   font-size: 1.6em; }
 
