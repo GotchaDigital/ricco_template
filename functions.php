@@ -768,6 +768,7 @@ add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_s
 function mktz_prod_func( $atts ) {
     $attrs = shortcode_atts( array(
         'category' => 'something',
+        'size' => 'small',
         'qty' => 3
     ), $atts );
 
@@ -788,7 +789,7 @@ function mktz_prod_func( $atts ) {
         $pro = new WC_Product($loop2->post->ID);
 
         //Pegando Imagem
-        $imgPro = $pro->get_image( $size = 'medium_large' );
+        $imgPro = $pro->get_image( $size = 'shop_single' );
         $proImage = '<div class="mktz-pro-img">' . $imgPro . '</div>';
 
         //Pegando Título
@@ -825,7 +826,7 @@ function mktz_prod_func( $atts ) {
 
     wp_reset_postdata();
 
-    return '<div class="nz-recent-projects small-image">' . $return . '</div>';
+    return '<div class="nz-recent-projects '. $attrs['size'] .'-image">' . $return . '</div>';
 }
 add_shortcode( 'mktz_prod', 'mktz_prod_func' );
 
