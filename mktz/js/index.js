@@ -23,6 +23,9 @@ $(function(){
                 $('input[name=mktz-produto]')
                     .val( prod.title + ' ( ' + prod.id + ' - '  + prod.URL +  ' )' )
                     .prop('disabled', true);
+                $('#sf_product')
+                    .val( prod.title + ' ( ' + prod.id + ' - '  + prod.URL +  ' )' )
+                    .prop('disabled', true);
             }
         });
     }
